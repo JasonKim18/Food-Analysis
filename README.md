@@ -57,6 +57,7 @@ In order to ensure that the data that we had was in a usable format, we had to g
 6. **Drop any unnecessary columns that we don't need.** We only kept the columns containing data that was relavent to our investigation
 
 Here is what the first 5 lines of our cleaned dataframe look like after making the changes:
+
 | name                                  | id     | rating | calories | total fat | sugar | sodium | protein | saturated fat | carbohydrates |
 |---------------------------------------|--------|--------|----------|-----------|-------|--------|---------|---------------|---------------|
 | 1 brownies in the world best ever     | 333281 | 4.0    | 138.4    | 10.0      | 50.0  | 3.0    | 3.0     | 19.0          | 6.0           |
@@ -87,7 +88,7 @@ This plot shows the relationship between the number of calories and the average 
 | (3, 4]          | 426.950824   | 35.281046   |
 | (4, 5]          | 426.305842   | 32.656086   |
 
-For this section we had to make sections that divided up the recipes by the ranges of their ratings. This allowed us to view the means of the calories and protein for each individuial section. Seeing this we can see that while there are slight differneces, they are generally pretty even across the differnt ratings.
+For this pivot table we had to make sections that divided up the recipes by the ranges of their ratings. This allowed us to view the means of the calories and protein for each individuial section. Seeing this we can see that while there are slight differneces, they are generally pretty even across the differnt ratings.
 
 ## Assessment of Missingness
 
