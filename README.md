@@ -92,3 +92,47 @@ For this pivot table we had to make sections that divided up the recipes by the 
 
 ## Assessment of Missingness
 
+### NMAR Analysis
+
+From our dataset, a column that could be missing values due to NMAR is 'review.' This is because the reviewrs might not include a reivew in their comment as they don't feel too strongly or have any opinions to voice. But if they did have a big complaint or thought that the recipe was really good, they would usually include a review in their response. As a result, the conscious chpoice of users to not write a review based on their lack of strong opinions would lead to the 'review' column being NMAR.
+
+## Missingness Dependency
+
+To look at the dependency of missing values in the 'rating' section, we willl first be comparing it to the 'protein' column. 
+
+Null Hypothesis: There is no significant difference between the 'rating' and the 'protein' of a recipe
+Alternative Hypothesis: There is a significant difference between the 'rating' and the 'protein' of a recipe
+
+We shuffle our data 1000 times to compare the differnce of means and the results that we get are shown below:
+
+<iframe src="assets/permutation_test.html" width=800 height=600 frameBorder=0></iframe>
+
+After running a permutation test on our data, we found that the p-value to equal 0.2010. The P-value is greater than our significance level of 0.05 so we fail to reject the null hypothesis. This means there is **NO** significant evidence that missingness in 'rating' **depends** on values in 'protein' 
+
+
+To look at the dependency of missing values in the 'rating' section, we willl first be comparing it to the 'protein' column. 
+
+Null Hypothesis: There is no significant difference between the 'rating' and the 'calories' of a recipe
+Alternative Hypothesis: There is a significant difference between the 'rating' and the 'calories' of a recipe
+
+We shuffle our data 1000 times to compare the differnce of means and the results that we get are shown below:
+
+<iframe src="assets/permutation_test_2.html" width=800 height=600 frameBorder=0></iframe>
+
+After running a permutation test on our data, we found that the p-value to equal 0.0. The P-value is less than our significance level of 0.05 so we reject the null hypothesis. This means there **IS** evidence that missingness in 'rating' **depends** on values in 'calories' 
+
+## Hypothesis Testing
+
+The question that we will be looking at for this hypothesis test is the same as the one listed at the very beginning:
+Is there a correlation between the number of calories and the average rating that a recipe has?
+
+But the only differnece is that to specify the difference in calories, we define a "large meal" as a meal that has over 600 calories. So we will make this distinction going forward with the rest of our hypothesis test.
+
+Null Hypothesis: There is no correlation between the average rating of large meals (meals above 600 calories) and small meals (meals less than or equal to 600 calories).
+Alternative Hypothesis: There is a correlation between the average rating of large meals (meals above 600 calories) and small meals (meals less than or equal to 600 calories).
+
+For this hypothesis test, we had to create a new column that was the boolean value of if each recipe was a large meal or not. We then took 1000 random shuffles of this column to calculate if there is differnece in means. The results that we found from this simulation are found below:
+
+<iframe src="assets/hypothesis_test.html" width=800 height=600 frameBorder=0></iframe>
+
+From this test, we found that the P-value of the test to be 0.5570. The P-value is greater than our significance level of 0.05 so we fail to reject the null hypothesis. This means is **NO** significant evidence that that there is a correlation between the number of calories and the average rating of a recipe.
